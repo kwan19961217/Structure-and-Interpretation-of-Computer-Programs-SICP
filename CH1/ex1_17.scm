@@ -1,5 +1,5 @@
 (define (fast-iter b n a)
-	(cond ((= n 1) (+ b a))
+	(cond ((= n 0) a)
 	      ((even? n) (fast-iter (double b)
 				    (halve n)
 				    a))
