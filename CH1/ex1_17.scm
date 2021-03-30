@@ -15,3 +15,6 @@
 
 (define (even? n)
 	(= (remainder n 2) 0))
+
+(define (* b n)
+  	(fast-iter b n 0))
