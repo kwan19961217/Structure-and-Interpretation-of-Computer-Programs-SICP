@@ -14,3 +14,6 @@
 
 (define (fib n)
   (fib-iter 1 0 0 1 n))
+
+(define (even? n)
+	(= (remainder n 2) 0))
