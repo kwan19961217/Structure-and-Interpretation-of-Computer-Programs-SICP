@@ -9,7 +9,7 @@
 			  (else (prime-iter (+ n 2) count))))
 
 
-
+; the code below is from textbook
 	
 (define (prime? n)
   	(= n (smallest-divisor n)))
