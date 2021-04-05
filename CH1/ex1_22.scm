@@ -5,15 +5,14 @@
 
 	(define (prime-iter n count)
 		(cond ((= count 3) True)
-		 	  ((= (smallest-divisor n) n) (prime-iter (+ n 2) (+ count 1)))
+		 	  ((prime? n) (prime-iter (+ n 2) (+ count 1)))
 			  (else (prime-iter (+ n 2) count))))
 
 
-  
-  
-  
-  
-  
+
+	
+(define (prime? n)
+  	(= n (smallest-divisor n)))
   
 (define (timed-prime-test n)
   (newline)
