@@ -25,10 +25,10 @@
 		(prime-iter (+ n 1) 0)
 		(prime-iter n 0)))
 
-	(define (prime-iter n count)
-		(cond ((= count 3) True)
-		 	  ((prime? n) (prime-iter (+ n 2) (+ count 1)))
-			  (else (prime-iter (+ n 2) count))))
+(define (prime-iter n count)
+	(cond ((= count 3) True)
+	      ((prime? n) (prime-iter (+ n 2) (+ count 1)))
+	      (else (prime-iter (+ n 2) count))))
 
 
 
