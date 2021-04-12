@@ -27,4 +27,4 @@
 		(+ x 2))
 
 (define (approx-pi n)
-		(product term-for-pi 2 plus-two (- n 2)))
+		(* 4 (product term-for-pi 2 plus-two (- n 2))))
