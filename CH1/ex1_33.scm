@@ -8,5 +8,7 @@
       			(recur term (next a) next b))))
 	(recur term a next b))
 
-;a
+;a using answer in ex1_28
 (filtered-accumulate prime-test + 0 square 2 add-one 10)
+
+;b
