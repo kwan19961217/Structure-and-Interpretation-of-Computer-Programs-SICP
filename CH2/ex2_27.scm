@@ -1,0 +1,5 @@
+(define (deep-reverse ls)
+        (if (not (pair? ls))
+            (list ls)
+            (append (deep-reverse (car (cdr ls))) (deep-reverse (car ls))))
+)
