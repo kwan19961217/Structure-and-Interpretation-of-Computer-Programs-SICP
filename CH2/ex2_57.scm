@@ -1,0 +1,32 @@
+(define (make-sum a1 a2)
+  ;check pure-pair so that the loop will not become infinite when encounter a math sign
+  (cond ((pure-pair? a2)
+         (make-sum a1 (make-sum (car a2) (cdr a2))))
+        ((null? a2) a1)
+        ((=number? a1 0) a2)
+        ((=number? a2 0) a1)
+        ((and (number? a1) (number? a2)) (+ a1 a2))
+        (else (list '+ a1 a2))))	
+
+ (define (pure-pair? l) 
+   (and (pair? l)  
+        (not (sum? l)) 
+        (not (product? l)) 
+        (not (exponentiation? l)))) 
+
+ (define (make-product m1 m2) 
+   (cond ((pure-pair? m2) 
+          (make-product m1 (make-product (car m2) (cdr m2)))) 
+         ((null? m2) m1) 
+         ((and (number? m1) (number? m2)) (* m1 m2)) 
+         ((and (number? m1) (= m1 1)) m2) 
+         ((and (number? m1) (= m1 0)) 0) 
+         ((and (number? m2) (= m2 1)) m1) 
+         ((and (number? m2) (= m2 0)) 0) 
+         (else (list '* m1 m2)))) 
+
+(define (augend s) 
+        (make-sum 0 (caddr s)))
+
+(define (multiplicand p) 
+        (make-product 1 (caddr p)))
