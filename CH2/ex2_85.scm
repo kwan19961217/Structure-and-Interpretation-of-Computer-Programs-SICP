@@ -25,5 +25,8 @@
 (define (drop val)
         (let ((proc (get 'project (type-tag val)))
               (if proc
-                  (drop (apply proc val))
-                  val))))
+                  (let ((dropped (apply proc val))
+                        (if (equ? dropped (raise dropped (type-tag val) tower))
+                            (drop dropped)
+                            val))
+                  val)))))
